@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <filter>
+        <filter-name>FilterLogin</filter-name>
+        <filter-class>com.wonokoyo.controller.login.FilterLogin</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterLogin</filter-name>
+        <servlet-name>MainController</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>MainController</servlet-name>
+        <servlet-class>com.wonokoyo.controller.MainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletTesting</servlet-name>
+        <servlet-class>com.wonokoyo.controller.ServletTesting</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servlettesting2</servlet-name>
+        <servlet-class>com.wonokoyo.controller.servlettesting2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MainController</servlet-name>
+        <url-pattern>/maincontroller</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletTesting</servlet-name>
+        <url-pattern>/servlettesting</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servlettesting2</servlet-name>
+        <url-pattern>/servlettesting2</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>maincontroller</welcome-file>
+    </welcome-file-list>
+</web-app>

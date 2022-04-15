@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_settingacc" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="User" class="java.lang.String"/>
+	<parameter name="gambar" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     M_SETTINGACC."KODEFORM" AS M_SETTINGACC_KODEFORM,
+     M_MENU."NAMAFORM" AS M_MENU_NAMAFORM,
+     M_SETTINGACC."ACCFORM" AS M_SETTINGACC_ACCFORM,
+     M_SETTINGACC."EDITFINALAPPROVE" AS M_SETTINGACC_EDITFINALAPPROVE
+FROM
+     "TDS"."M_MENU" M_MENU INNER JOIN "TDS"."M_SETTINGACC" M_SETTINGACC ON M_MENU."KODEFORM" = M_SETTINGACC."KODEFORM"]]>
+	</queryString>
+	<field name="M_SETTINGACC_KODEFORM" class="java.lang.String"/>
+	<field name="M_MENU_NAMAFORM" class="java.lang.String"/>
+	<field name="M_SETTINGACC_ACCFORM" class="java.lang.String"/>
+	<field name="M_SETTINGACC_EDITFINALAPPROVE" class="java.lang.String"/>
+	<variable name="User" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="260" y="18" width="295" height="25"/>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Double"/>
+					<topPen lineWidth="0.0" lineStyle="Double"/>
+					<leftPen lineWidth="0.0" lineStyle="Double"/>
+					<bottomPen lineWidth="0.0" lineStyle="Double"/>
+					<rightPen lineWidth="0.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="20" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[MASTER SETTING ACC]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="1" width="68" height="37"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{gambar}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="52" y="1" width="208" height="15"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT. WONOKOYO JAYA CORPORINDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="15" width="117" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIVISI UMUM DAN HRD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="26" width="100" height="12"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIT KANTOR PUSAT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="42" width="554" height="1"/>
+				<graphicElement>
+					<pen lineWidth="3.25" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="28" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="1" y="9" width="90" height="17" forecolor="#736343"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[KODE FORM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="430" y="9" width="125" height="17" forecolor="#736343"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[EDIT FINAL APPROVE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="91" y="9" width="251" height="17" forecolor="#736343"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[NAMA FORM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="342" y="9" width="88" height="17" forecolor="#736343"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[SETTING ACC]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" forecolor="#D0B48E"/>
+				<textField>
+					<reportElement x="1" y="0" width="90" height="15"/>
+					<box leftPadding="5"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{M_SETTINGACC_KODEFORM}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="91" y="0" width="251" height="15"/>
+					<box leftPadding="5"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{M_MENU_NAMAFORM}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="342" y="0" width="88" height="15"/>
+					<box leftPadding="5"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{M_SETTINGACC_ACCFORM}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="430" y="0" width="125" height="15"/>
+					<box leftPadding="5"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{M_SETTINGACC_EDITFINALAPPROVE}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="1" width="554" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<box leftPadding="4"/>
+				<textField pattern="dd/MM/yyyy HH:mm:ss">
+					<reportElement x="2" y="2" width="100" height="20"/>
+					<textElement>
+						<font size="10" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="101" y="9" width="4" height="1"/>
+					<graphicElement>
+						<pen lineWidth="1.5"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement x="105" y="2" width="100" height="20"/>
+					<box leftPadding="3"/>
+					<textElement>
+						<font size="10" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{User}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="458" y="2" width="80" height="20"/>
+					<textElement textAlignment="Right">
+						<font isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement x="538" y="2" width="12" height="20"/>
+					<textElement textAlignment="Right">
+						<font isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

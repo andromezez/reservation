@@ -1,0 +1,134 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>TDS - Sewa Ruang dan Ijin Lembur</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../lib/extjs-3.3.1/resources/css/ext-all.css" />
+    <script type="text/javascript" src="../../lib/extjs-3.3.1/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../lib/extjs-3.3.1/ext-all-debug.js"></script>
+    <script type="text/javascript">
+
+    if (Ext.BLANK_IMAGE_URL.substr(0, 5) != 'data:') {
+        Ext.BLANK_IMAGE_URL = '../../lib/extjs-3.3.1/resources/images/default/s.gif';
+    }
+//
+    Ext.onReady(function(){
+    Ext.QuickTips.init();
+    var mmenu_form = new Ext.FormPanel({
+         url: 'MmenuDb.java',
+         renderTo: Ext.getBody(),
+         frame: true,
+         title: 'Master Menu',
+         items: [{
+                 xtype: 'textfield',
+                 fieldLabel: 'Kode Form',
+                 name: 'kodeform',
+                 allowBlank: false
+                },{
+                 xtype: 'textfield',
+                 fieldLabel: 'Nama Form',
+                 name: 'namaform',
+                 width: 200,
+                 allowBlank: false
+                },{
+                 xtype: 'compositefield',
+                 fieldLabel: 'Kode Parent',
+                 items : [
+                    {
+                        xtype: 'textfield',
+                        name : 'kodeparent'
+                    },
+                    {
+                        xtype: 'button',
+                        text : '...',
+                        name : 'btnkodeparent',
+                        handler : function(){
+                            mmenu_form.getForm().submit({
+                            waitMsg: 'Loading...',
+                            success: function(form, action) {
+                                //
+                            },
+                            failure: function(form, action){
+                                Ext.Msg.alert('Warning', action.result.error);
+                            }
+                            });
+                        }
+                    }
+                    ]
+                },{
+                 xtype: 'textfield',
+                 fieldLabel: 'URL',
+                 name: 'url',
+                 width: 250
+                }],
+         buttons: [{
+              text: 'BARU',
+              handler: function(){
+                  mmenu_form.getForm().submit({
+                    waitMsg: 'Loading...',
+                    success: function(form, action) {
+                        //
+                    },
+                    failure: function(form, action){
+                        Ext.Msg.alert('Warning', action.result.error);
+                    }
+                  });
+              }
+              },{
+              text: 'UBAH',
+              handler: function(){
+                  mmenu_form.getForm().submit({
+                    waitMsg: 'Loading...',
+                    success: function(form, action) {
+                        //
+                    },
+                    failure: function(form, action){
+                        Ext.Msg.alert('Warning', action.result.error);
+                    }
+                  });
+              }
+              },{
+              text: 'SIMPAN',
+              handler: function(){
+                  mmenu_form.getForm().submit({
+                    waitMsg: 'Loading...',
+                    success: function(form, action) {
+                        //
+                    },
+                    failure: function(form, action){
+                        Ext.Msg.alert('Warning', action.result.error);
+                    }
+                  });
+              }
+              },{
+              text: 'HAPUS',
+              handler: function(){
+                  mmenu_form.getForm().submit({
+                    waitMsg: 'Loading...',
+                    success: function(form, action) {
+                        //
+                    },
+                    failure: function(form, action){
+                        Ext.Msg.alert('Warning', action.result.error);
+                    }
+                  });
+              }
+              },{
+              text: 'BATAL',
+              handler: function(){
+                        mmenu_form.getForm().reset();
+              }
+             }]
+    });
+    });
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

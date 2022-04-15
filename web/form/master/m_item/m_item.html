@@ -1,0 +1,127 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>TDS - Sewa Ruang dan Ijin Lembur</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../lib/extjs-3.3.1/resources/css/ext-all.css" />
+    <script type="text/javascript" src="../../lib/extjs-3.3.1/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../lib/extjs-3.3.1/ext-all-debug.js"></script>
+    <script type="text/javascript">
+
+    if (Ext.BLANK_IMAGE_URL.substr(0, 5) != 'data:') {
+        Ext.BLANK_IMAGE_URL = '../../lib/extjs-3.3.1/resources/images/default/s.gif';
+    }
+//
+    Ext.onReady(function(){
+    Ext.QuickTips.init();
+    var tab2 = new Ext.FormPanel({
+        renderTo: Ext.getBody(),
+        //labelAlign: 'top',
+        title: 'Master Item',
+        bodyStyle:'padding:5px',
+        frame : true,
+        width: 600,
+        items: [{
+            layout:'column',
+            border:false,
+            items:[{
+                columnWidth:.5,
+                layout: 'form',
+                border:false,
+                items: [{
+                    xtype:'textfield',
+                    fieldLabel: 'Kode Item',
+                    name: 'kodeitem',
+                    anchor:'95%'
+                }, {
+                    xtype:'textfield',
+                    fieldLabel: 'Nama Item',
+                    name: 'namaitem',
+                    anchor:'95%'
+                }, {
+                    xtype:'textfield',
+                    fieldLabel: 'Kode Jenis',
+                    name: 'kodejenis',
+                    anchor:'95%'
+                }, {
+                    xtype:'textfield',
+                    fieldLabel: 'Durasi Min Sewa',
+                    name: 'durasiminsewa',
+                    anchor:'95%'
+                }, {
+                    xtype:'textfield',
+                    fieldLabel: 'Kapasitas',
+                    name: 'kapasitas',
+                    anchor:'95%'
+                }, {
+                    xtype:'textfield',
+                    fieldLabel: 'Keterangan',
+                    name: 'keterangan',
+                    anchor:'95%'
+                }]
+
+            },{
+                columnWidth:.5,
+                layout: 'form',
+                border:false,
+                items: [{
+                    xtype:'checkbox',
+                    fieldLabel: 'Aktif',
+                    name: 'aktif',
+                    anchor:'95%'
+                },{
+                    xtype:'checkbox',
+                    fieldLabel: 'Status Availability',
+                    name: 'statusavailability',
+                    anchor:'95%'
+                },{
+                    xtype:'checkbox',
+                    fieldLabel: 'Price Changeable',
+                    name: 'pricechangeable',
+                    anchor:'95%'
+                }]
+            }]
+        },{
+            xtype:'tabpanel',
+            plain:true,
+            activeTab: 0,
+            height:235,
+            /*
+              By turning off deferred rendering we are guaranteeing that the
+              form fields within tabs that are not activated will still be rendered.
+              This is often important when creating multi-tabbed forms.
+            */
+            deferredRender: false,
+            defaults:{bodyStyle:'padding:10px'},
+            items:[{
+                title:'Internal',
+                html : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, sodales a, porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales non, iaculis ac, lacus.",
+                layout:'form',
+                defaults: {width: 230}
+            },{
+                title:'Eksternal',
+                layout:'form',
+                defaults: {width: 230}
+            }]
+        }],
+
+        buttons: [{
+            text: 'Save'
+        },{
+            text: 'Cancel'
+        }]
+    });
+
+    //tab2.render(document.body);
+});
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

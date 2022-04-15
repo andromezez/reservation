@@ -1,0 +1,99 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css"
+           href="lib/extjs-3.3.1/resources/css/ext-all.css" />
+    <style type="text/css">
+        .my-panel-class {
+            font-family: tahoma,sans-serif;
+        }
+    </style>
+     <script type="text/javascript" src="lib/extjs-3.3.1/adapter/ext/ext-base.js"></script>
+     <script type="text/javascript" src="lib/extjs-3.3.1/ext-all-debug.js"></script>
+      <link type="text/css" rel="stylesheet" href="lib/extjs-3.3.1/plugins/DateTimePicker/ux-date-time-field.css"/>
+
+      <script type="text/javascript" src="lib/extjs-3.3.1/plugins/DateTimePicker/date-time-field-debug.js"></script>
+     <script type="text/javascript">
+         if (Ext.BLANK_IMAGE_URL.substr(0, 5) != 'data:') {
+            Ext.BLANK_IMAGE_URL = 'lib/extjs-3.3.1/resources/images/default/s.gif';
+         }
+         
+         Ext.onReady(function(){
+        var dateField = new Ext.ux.form.DateTimeField({
+                dateFormat: 'j M Y',
+                timeFormat: 'H:i',
+                fieldLabel: 'Date & time',
+                picker: {
+                    timePicker: {
+                        hourIncrement: 1,
+                        minIncrement: 1
+                    }
+                }
+            });
+
+            var form = new Ext.form.FormPanel({
+                title: 'My form',
+                bodyStyle: {
+                    padding: '10px'
+                },
+                items: [dateField]
+            });
+
+            new Ext.Panel({
+                title: 'Test',
+                renderTo: Ext.getBody(),
+                width: 800,
+                height: 400,
+                bodyStyle: {
+                    padding: '10px'
+                },
+                layout: 'absolute',
+                items: [
+                    {
+                        x: 10,
+                        y: 10,
+                        border: false,
+                        items: form,
+                        width: 500
+                    },
+                    {
+                        xtype: 'datetimepicker',
+                        x: 600,
+                        y: 10,
+                        timeFormat: 'H:i',
+                        timePicker: {
+                            hourIncrement: 4,
+                            minIncrement: 45
+                        }
+                    }
+                ],
+                buttons: [
+                    {
+                        text: 'Set current time',
+                        handler: function (df) {
+                            df.setValue(new Date());
+                        }.createDelegate(this, [dateField], 0)
+                    },
+                    {
+                        text: 'Destroy form',
+                        handler: function (f) {
+                            Ext.destroy(f);
+                        }.createDelegate(this, [form], 0)
+                    }
+                ]
+            });
+           
+         });
+
+     </script>
+  </head>
+  <body style="padding-left: 2px;font-size: large">
+      
+  </body>
+</html>

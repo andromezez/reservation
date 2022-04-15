@@ -1,0 +1,16 @@
+<data>
+<event id="8">
+    <start_date><![CDATA[2010-12-21 19:00:00]]></start_date>
+    <end_date><![CDATA[2010-12-21 20:00:00]]></end_date>
+    <text><![CDATA[coba coba]]></text>
+    <kode_item><![CDATA[0002]]></kode_item>
+    <readonly><![CDATA[French Open]]></readonly>
+</event>
+<event id='1' start_date='2010-12-19 07:00' end_date='2010-12-21 07:00' text='International Horse Show' kode_item='0001' />
+<event id='2' start_date='2010-12-19 18:00' end_date='2010-12-19 20:15' text='Ladbrokes.com World Darts Championships (Evening session)' readonly='true' kode_item='0001' />
+<event id='3' start_date='2010-12-20 08:00' end_date='2010-12-20 10:00' text='Peter Pan' readonly='true' kode_item='0002' />
+<event id='4' start_date='2010-12-21 08:00' end_date='2010-12-21 10:00' text='Pet Shop Boys' readonly='true' kode_item='0002' />
+<event id='5' start_date='2010-12-22 06:00' end_date='2010-12-22 08:00' text='Wicked'  readonly='true' kode_item='0001' />
+<event id='6' start_date='2010-12-23 15:00' end_date='2010-12-25 15:00' text='Ladbrokes.com World Darts Championships (Afternoon session)' readonly='true' kode_item='0002' />
+<event id='7' start_date='2010-12-23 15:00' end_date='2010-12-23 17:00' text='Calendar Girls' readonly='true' kode_item='0001' />
+</data>
