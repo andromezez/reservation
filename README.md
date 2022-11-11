@@ -6,7 +6,7 @@ Background story, I was just reminiscing my past as a junior software developer 
 
 My background until now is application developer. Dealing with CRUD/business application. I'm not a library author nor a DSA specialist. So reading through most of the discussion in [r/java](https://www.reddit.com/r/java/) by all the gurus often triggered my imposter syndrome.
 
-With all that, if a junior java dev, in his first year of working experience (around 2010-2011), working in a non-tech company, with no mentoring from senior java dev (since senior java dev is non-existent there), no SCJP (Sun certified java program) since no money of course, able to build his first java web application with specs as below :
+With all of that, this was my result as a junior java dev, in his first year of working experience (around 2010-2011), working in a non-tech company, with no mentoring from senior java dev (since senior java dev is non-existent there), no SCJP (Sun certified java program) since no money of course, able to build his first java web application with specs as below :
 
 1.  pure raw servlet (understanding web.xml, servlet filter, servlet mapping)
 2.  Monolithic. Well, it's kinda small by today's standard.
