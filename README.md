@@ -34,3 +34,7 @@ But for internal quality, I think many people who understand gonna be pissed. Th
 It didn't use build tools like maven, not even ant. And I think I need to revise, I didn't use prep statements, it was using normal statements with string concat to construct the query.
 
 I put many queries under js [https://github.com/andromezez/reservation/tree/main/web/store](https://github.com/andromezez/reservation/tree/main/web/store) , so it will be sent through the request body, and the backend only needs to run it. I asked my supervisor at that time whether the app will be exposed publicly or just intranet. Since they said only intranet, then I made that conscious compromise to meet the deadline. Not enough time to create proper request handlers for every case. Luckily no code review from them.
+
+[![login page](https://bayutomo.id/wp-content/uploads/2022/04/booking-room-login.jpg "login page")](https://bayutomo.id/wp-content/uploads/2022/04/booking-room-login.jpg "login page")
+
+[![front page](https://bayutomo.id/wp-content/uploads/2022/04/booking-room-mainpage.jpg "front page")](https://bayutomo.id/wp-content/uploads/2022/04/booking-room-mainpage.jpg "front page")
